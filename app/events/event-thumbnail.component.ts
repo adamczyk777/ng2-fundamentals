@@ -24,7 +24,7 @@ import { IEvent } from './shared/index'
     styles: [`
         .pad-left { margin-left: 10px; }
         .well div { color: #bbb; }
-        .thumbnail { min-height: 300px; }
+        .thumbnail { min-height: 280px; }
         .green { color: #003300 !important; }
         .bold { font-weight: bold; }
     `]

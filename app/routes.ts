@@ -1,11 +1,11 @@
 import { Routes } from '@angular/router'
-import
-{
+import {
     EventsListComponent,
     EventDetailsComponent,
     EventRouteActivator,
     CreateEventComponent,
     EventListResolver,
+    CreateSessionComponnet,
 } from './events/index'
 import { Error404Component } from './errors/404.component'
 
@@ -16,4 +16,5 @@ export const appRoutes: Routes = [
     { path: '404', component: Error404Component },
     { path: '', redirectTo: '/events', pathMatch: 'full' }, // prefix starts with full redirect if full matches
     { path: 'user', loadChildren: 'app/user/user.module#UserModule' },
+    { path: 'events/session/new', component: CreateSessionComponnet },
 ]
