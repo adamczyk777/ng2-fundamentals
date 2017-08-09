@@ -22,11 +22,13 @@ import {
     EventRouteActivator,
     EventListResolver,
 } from './events/index'
-import { ToastrService } from './common/toastr.service'
+import { TOASTR_TOKEN, Toastr } from './common/toastr.service'
 import { AuthService } from './user/auth.service'
 //// ETC:
 import { appRoutes } from './routes'
 import { DurationPipe } from './events/index'
+
+declare let toastr: Toastr
 
 @NgModule({
     imports:
@@ -55,7 +57,7 @@ import { DurationPipe } from './events/index'
     [
         EventRouteActivator,
         EventService,
-        ToastrService,
+        { provide: TOASTR_TOKEN, useValue: toastr },
         EventListResolver,
         {
             provide: 'canDeactivateCreateEvent',
