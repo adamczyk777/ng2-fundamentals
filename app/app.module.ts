@@ -11,6 +11,7 @@ import {
     CreateEventComponent,
     CreateSessionComponnet,
     SessionListComponent,
+    UpvoteComponent,
 } from './events/index'
 import { EventsAppComponent } from './events-app.component'
 import { NavbarComponent } from './nav/navbar.component'
@@ -24,13 +25,14 @@ import {
     EventService,
     EventRouteActivator,
     EventListResolver,
+    VoterService,
 } from './events/index'
 import { JQ_TOKEN, TOASTR_TOKEN, Toastr } from './common/index'
 import { AuthService } from './user/auth.service'
 //// ETC:
 import { ModalTriggerDirective } from './common/index'
 import { appRoutes } from './routes'
-import { DurationPipe } from './events/index'
+import { DurationPipe, LocationValidator } from './events/index'
 
 declare let toastr: Toastr
 declare let jQuery: Object
@@ -57,11 +59,14 @@ declare let jQuery: Object
         CreateSessionComponnet,
         SessionListComponent,
         CollapsibleWellComponent,
+        UpvoteComponent,
         ModalTriggerDirective,
         DurationPipe,
+        LocationValidator,
     ],
     providers:
     [
+        VoterService,
         EventRouteActivator,
         EventService,
         { provide: TOASTR_TOKEN, useValue: toastr },
