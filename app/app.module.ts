@@ -24,7 +24,7 @@ import {
 //// SERVICES:
 import {
     EventService,
-    EventRouteActivator,
+    EventResolver,
     EventListResolver,
     VoterService,
 } from './events/index'
@@ -69,7 +69,7 @@ declare let jQuery: Object
     providers:
     [
         VoterService,
-        EventRouteActivator,
+        EventResolver,
         EventService,
         { provide: TOASTR_TOKEN, useValue: toastr },
         { provide: JQ_TOKEN, useValue: jQuery },
